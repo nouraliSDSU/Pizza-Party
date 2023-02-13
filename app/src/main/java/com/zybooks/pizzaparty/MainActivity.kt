@@ -35,11 +35,13 @@ class MainActivity : AppCompatActivity() {
     fun calculateClick(view: View) {
 
         /** Retrieve the text that was typed into the EditText
-         *  Then convert it to an integer
          */
         val numAttendStr = numAttendEditText.text.toString()
 
-        val numAttend = numAttendStr.toInt()
+        /**
+         * Convert the text to an integer
+         */
+        val numAttend = numAttendStr.toIntOrNull() ?: 0;
 
         // Determine how many slices on average each person will eat
         val slicesPerPerson = when (howHungryRadioGroup.checkedRadioButtonId) {
