@@ -8,6 +8,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 
+/**
+ * @author Nour Ali
+ * @since version 2022.2
+ * This class is the main driver for our pizza party app.
+ */
 const val SLICES_PER_PIZZA = 8
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +21,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var numPizzasTextView: TextView
     private lateinit var howHungryRadioGroup: RadioGroup
 
+    /**
+     * Initialize [numAttendEditText], [numPizzasTextView] and [howHungryRadioGroup]
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
