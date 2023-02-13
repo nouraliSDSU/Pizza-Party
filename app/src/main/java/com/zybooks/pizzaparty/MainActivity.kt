@@ -34,23 +34,32 @@ class MainActivity : AppCompatActivity() {
 
     fun calculateClick(view: View) {
 
-        /** Retrieve the text that was typed into the EditText
+        /**
+         * Retrieve the text that was typed into the EditText
          */
         val numAttendStr = numAttendEditText.text.toString()
 
         /**
          * Convert the text to an integer
+         * Guard against null value by setting it to 0
          */
         val numAttend = numAttendStr.toIntOrNull() ?: 0;
 
-        // Determine how many slices on average each person will eat
+        /**
+         * Determine how many slices on average each person will eat
+         */
         val slicesPerPerson = when (howHungryRadioGroup.checkedRadioButtonId) {
             R.id.light_radio_button -> 2
             R.id.medium_radio_button -> 3
             else -> 4
         }
 
-        // Calculate and show the number of pizzas needed
+        /**
+         * Calculate and show the number of pizzas needed
+         * Ex. When the Light radio button is selected,
+         * the app assumes each person eats 2 slices.
+         * Math.ceil(10 * 2 / 8.0) = Math.ceil(2.5) = 3
+         */
         val totalPizzas = ceil(numAttend * slicesPerPerson / SLICES_PER_PIZZA.toDouble()).toInt()
         numPizzasTextView.text = "Total pizzas: $totalPizzas"
     }
