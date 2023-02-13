@@ -34,10 +34,11 @@ class MainActivity : AppCompatActivity() {
 
     fun calculateClick(view: View) {
 
-        // Get the text that was typed into the EditText
+        /** Retrieve the text that was typed into the EditText
+         *  Then convert it to an integer
+         */
         val numAttendStr = numAttendEditText.text.toString()
 
-        // Convert the text into an integer
         val numAttend = numAttendStr.toInt()
 
         // Determine how many slices on average each person will eat
