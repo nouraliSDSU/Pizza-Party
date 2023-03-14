@@ -69,7 +69,7 @@
 
     <Button
         android:id="@+id/calc_button"
-        android:text="Calculate"
+        android:text="@string/calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
